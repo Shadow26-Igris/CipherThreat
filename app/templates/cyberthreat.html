@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Viruses</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(52, 58, 64, 0.9);
+            color: white;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+
+        .navbar a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+
+        .section {
+            min-height: 100vh;
+            background-color: #f8f9fa;
+            padding: 100px 50px;
+            text-align: center;
+            position: relative;
+            color: black;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .section:hover {
+            background-color: #e9ecef;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            transform: scale(1.02);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+        }
+
+        .subsection {
+            width: 25%;
+            height: 66%;
+            background-color: #dee2e6;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            /* Ensure the image stays within the subsection */
+        }
+
+        .subsection img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Make sure the image covers the full subsection without distortion */
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .section:hover .subsection img {
+            transform: scale(1.05);
+            /* Scale up image slightly when hovering over the section */
+            filter: brightness(1.2);
+            /* Add glow effect by brightening the image */
+        }
+
+        .content {
+            width: 65%;
+            text-align: left;
+        }
+
+        .section:nth-child(odd) .subsection {
+            order: 2;
+        }
+
+        .section:nth-child(odd) .content {
+            order: 1;
+        }
+
+        .section:nth-child(even) .subsection {
+            order: 1;
+        }
+
+        .section:nth-child(even) .content {
+            order: 2;
+        }
+
+        a.anchor {
+            display: block;
+            position: relative;
+            top: -70px;
+            visibility: hidden;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="#section1">Computer Viruses</a>
+        <a href="#section2">Worms</a>
+        <a href="#section3">Trojans</a>
+        <a href="#section4">Ransomware</a>
+        <a href="#section5">Spyware</a>
+        <a href="#section6">Adware</a>
+        <a href="#section7">Rootkits</a>
+        <a href="#section8">Keyloggers</a>
+        <a href="#section9">Phishing</a>
+        <a href="#section10">APTs</a>
+    </div>
+
+    <!-- Sections -->
+    <div id="section1" class="section">
+        <div class="content">
+            <h1>Computer Viruses</h1>
+            <p>
+            <h3>Definition</h3>
+            A computer virus is a type of malicious software (malware) designed to attach itself to legitimate files or
+            programs and replicate when those files are executed. Unlike worms, which spread independently, viruses
+            require user actions like opening an infected file to activate. Once active, they can corrupt data, delete
+            files, or disrupt system operations.
+
+            <h3>Characteristics</h3>
+            Computer viruses are characterized by their ability to infect a wide range of file types, including
+            executables, documents, and scripts. They often use stealth techniques to avoid detection, such as
+            encrypting their code or modifying themselves. Many viruses lie dormant until a specific trigger activates
+            them, such as a certain date or user action.
+
+            <h3>Common Types</h3>
+            Different types of computer viruses exist, each with unique behaviors. File infector viruses attach to
+            executable files and spread when they are run. Macro viruses target software like Microsoft Word, embedding
+            malicious code into documents. Boot sector viruses affect the boot sector of storage devices, making them
+            active during system startup.
+
+            <h3>Symptoms</h3>
+            Infected systems often display telltale signs like slow performance, frequent crashes, and unexpected
+            pop-ups. Files may become corrupted or disappear entirely. In extreme cases, users might lose access to
+            their operating systems if critical system files are damaged or deleted.
+
+            <h3>Examples</h3>
+            Some infamous computer viruses include the Melissa virus, which spread through email attachments in 1999,
+            and the CIH (Chernobyl) virus, which caused extensive data loss and even hardware damage by overwriting
+            system BIOS</p>
+        </div>
+        <div class="subsection">
+            <img src="{{ url_for('static', filename='images/tj.jpg') }}" class="subsection-image">
+        </div>
+    </div>
+    <div id="section2" class="section">
+        <div class="content">
+            <h1>Worms</h1>
+            <p>
+            <h3>Definition</h3>
+            Worms are a type of self-replicating malware that can spread across networks without requiring user actions
+            or attaching themselves to a host program. They exploit vulnerabilities in systems or networks to propagate,
+            often causing significant damage by consuming resources or distributing additional malware.
+
+            <h3>Characteristics</h3>
+            Unlike viruses, worms operate independently and do not need a host file or user interaction to spread. They
+            are highly effective in exploiting network security flaws and can propagate rapidly, often infecting
+            thousands of systems in minutes. Worms primarily aim to disrupt network traffic or install backdoors for
+            attackers.
+
+            <h3>Mechanisms of Spread</h3>
+            Worms utilize various methods to spread, such as email attachments containing malicious code,
+            vulnerabilities in network services, or shared file systems. Some worms also leverage weak passwords or
+            outdated software, exploiting them to gain access to new hosts and replicate themselves.
+
+            <h3>Symptoms</h3>
+            A system or network infected by worms may experience significant slowdowns due to excessive traffic. Users
+            might notice unusual activities, such as unauthorized access attempts or unexpected files appearing on their
+            systems. Additionally, network administrators often detect a sharp increase in data transmission.
+
+            <h3>Examples</h3>
+            The Morris Worm, the first widely recognized internet worm, caused significant disruption in 1988. Another
+            example is the SQL Slammer worm, which exploited a Microsoft SQL vulnerability in 2003, spreading globally
+            in less than 10 minutes and causing widespread outages.</p>
+        </div>
+        <div class="subsection">
+            <img src="{{ url_for('static', filename='images/worm.jpg') }}" class="subsection-image">
+        </div>
+    </div>
+    <div id="section3" class="section">
+        <div class="content">
+            <h1>Trojans</h1>
+            <p>
+            <h3>Definition</h3>
+            Named after the legendary Trojan Horse, Trojans are malicious programs disguised as legitimate software.
+            They deceive users into installing them, granting attackers unauthorized access to systems. Unlike viruses
+            and worms, Trojans do not replicate but often serve as gateways for other malware.
+
+            <h3>Characteristics</h3>
+            Trojans rely on deception to gain entry into a system, often masquerading as useful tools, games, or
+            updates. Once installed, they may grant attackers control over the infected device, monitor user activity,
+            or steal sensitive data. Many Trojans are tailored to target specific vulnerabilities or systems.
+
+            <h3>Types of Trojans</h3>
+            Several types of Trojans exist, each with specific purposes. Banking Trojans aim to steal financial data,
+            while Remote Access Trojans (RATs) provide full control of the infected device. Dropper Trojans are used to
+            install other malware, and destructive Trojans can delete files or crash systems.
+
+            <h3>Symptoms</h3>
+            Trojans often operate silently, but their effects may become evident over time. Users might notice unusual
+            system behavior, unauthorized account access, or missing data. In some cases, security software may detect
+            and alert users to the presence of malicious files.
+
+            <h3>Examples</h3>
+            Prominent examples include the Zeus Trojan, which targeted banking credentials, and the Emotet Trojan, known
+            for its adaptability and use as a malware delivery platform.</p>
+        </div>
+        <div class="subsection">
+            <img src="{{ url_for('static', filename='images/troj.jpg') }}" class="subsection-image">
+        </div>
+    </div>
+    <div id="section4" class="section">
+        <div class="content">
+            <h1>Ransomware</h1>
+
+            <p>
+            <h3>Definition</h3>
+            Ransomware is a form of malware that encrypts a victim’s files or locks their systems, demanding payment
+            (usually in cryptocurrency) to restore access. It is one of the most financially devastating cyber threats,
+            targeting individuals, businesses, and critical infrastructure alike.
+
+            <h3>Characteristics</h3>
+            Ransomware typically uses strong encryption algorithms to lock files, rendering them inaccessible without a
+            decryption key. It spreads through phishing emails, malicious downloads, or compromised software. Many
+            ransomware strains include countdown timers to pressure victims into paying quickly.
+
+            <h3>Modes of Operation</h3>
+            The attack process involves infiltrating a system, encrypting files, and displaying a ransom note. Some
+            ransomware also exfiltrates sensitive data, threatening to release it unless the ransom is paid. Even after
+            payment, victims may not always recover their files.
+
+            <h3>Impact</h3>
+            Victims of ransomware attacks often suffer significant financial losses due to ransom payments, downtime,
+            and data recovery efforts. Businesses may face reputational damage, while critical infrastructure attacks
+            can disrupt essential services like healthcare or energy.
+
+            <h3>Examples</h3>
+            WannaCry was a global ransomware outbreak in 2017 that exploited a Windows vulnerability, affecting over
+            200,000 systems. Ryuk, another notorious strain, has targeted large organizations, demanding ransoms
+            exceeding millions of dollars.</p>
+        </div>
+        <div class="subsection">
+            <img src="{{ url_for('static', filename='images/ransome.jpg') }}" class="subsection-image">
+        </div>
+    </div>
+    <div id="section5" class="section">
+        <div class="content">
+            <h1>Spyware</h1>
+
+            <p>
+            <h3>Definition</h3>
+            Spyware is malicious software designed to secretly monitor user activities and collect sensitive
+            information, such as login credentials or financial data. It often operates without the victim's knowledge,
+            making it a significant threat to privacy.
+
+            <h3>Characteristics</h3>
+            Spyware works stealthily in the background, collecting data and transmitting it to attackers. It is often
+            bundled with legitimate software or downloaded unintentionally from malicious websites. Some spyware
+            specifically targets mobile devices to access SMS messages, GPS locations, or app data.
+
+            <h3>Types</h3>
+            Spyware can take various forms, including keyloggers that record keystrokes, ad tracking cookies that
+            monitor browsing habits, and system monitors that log all user activities. Advanced spyware may even access
+            webcams or microphones.
+
+            <h3>Symptoms</h3>
+            Infected systems may experience slower performance, unexpected pop-ups, or unauthorized changes to settings.
+            Users might notice unusual data usage or battery drain, especially on mobile devices. Security software
+            alerts may indicate the presence of spyware.
+
+            <h3>Examples</h3>
+            Pegasus spyware, developed by the NSO Group, has been used in targeted surveillance campaigns. Another
+            example, CoolWebSearch, redirected users to malicious websites and stole browser data.</p>
+        </div>
+        <div class="subsection">
+            <img src="{{ url_for('static', filename='images/spy.jpg') }}" class="subsection-image">
+        </div>
+    </div>
+    <div id="section6" class="section">
+        <div class="content">
+            <h1>Adware</h1>
+            <p>
+            <h3>Definition</h3>
+            Adware is a type of software that automatically delivers unwanted advertisements to users. While some adware
+            is relatively harmless and simply designed to generate revenue through ads, others are malicious and can
+            compromise user privacy or lead to further malware infections.
+
+            <h3>Characteristics</h3>
+            Adware often comes bundled with free software downloads, tricking users into installation. Once active, it
+            displays intrusive ads, redirects browsers to promotional pages, or alters browser settings. Some adware
+            also tracks browsing habits, collecting data for targeted advertising or even selling it to third parties.
+
+            <h3>Risks</h3>
+            Adware can expose users to malicious websites and downloads, leading to more severe malware infections. It
+            can also slow down system performance, consume bandwidth, and compromise user privacy. Over time, it may
+            render a browser or device nearly unusable.
+
+            <h3>Symptoms</h3>
+            Affected users frequently encounter excessive pop-up ads, unexpected browser redirects, and changes to their
+            homepage or default search engine. Browsing speed may significantly decrease, and additional unwanted
+            software might be installed without consent.
+
+            <h3>Examples</h3>
+            Gator was a popular adware program that displayed pop-up ads and collected user data. Another notable
+            example, Fireball, was a browser hijacker that altered search engine results and tracked browsing activity
+            for financial gain.</p>
+        </div>
+        <div class="subsection">
+            <img src="{{ url_for('static', filename='images/ad.jpg') }}" class="subsection-image">
+        </div>
+    </div>
+    <div id="section7" class="section">
+        <div class="content">
+            <h1>Rootkits</h1>
+            <p>
+            <h3>Definition</h3>
+            A rootkit is a type of malware designed to provide unauthorized, high-privilege access to a computer system
+            while hiding its presence. Attackers use rootkits to maintain control over infected devices, often evading
+            detection for extended periods.
+
+            <h3>Characteristics</h3>
+            Rootkits can operate at various levels, from user-mode applications to kernel-level processes. They are
+            typically installed by exploiting vulnerabilities or tricking users into running malicious software.
+            Rootkits are challenging to detect, as they can conceal their files, processes, and network connections.
+
+            <h3>Modes of Infection</h3>
+            Rootkits are delivered through phishing emails, malicious downloads, or compromised software. Once
+            installed, they grant attackers administrative access to the system, allowing them to manipulate data,
+            disable security tools, and monitor user activities.
+
+            <h3>Symptoms</h3>
+            Rootkits are notoriously difficult to identify, but signs of infection may include disabled antivirus
+            software, hidden files or processes, unusual network activity, or unexplained system crashes. Advanced
+            rootkits may leave no visible traces.
+
+            <h3>Examples</h3>
+            The Sony BMG rootkit, bundled with music CDs, sparked controversy for compromising user systems. Necurs is
+            another well-known rootkit that spread ransomware and spam while avoiding detection.</p>
+        </div>
+        <div class="subsection">
+            <img src="{{ url_for('static', filename='images/root.jpg') }}" class="subsection-image">
+        </div>
+    </div>
+    <div id="section8" class="section">
+        <div class="content">
+            <h1>Keyloggers</h1>
+            <p>
+            <h3>Definition</h3>
+            Keyloggers are malicious programs or devices designed to record keystrokes on a keyboard. Their primary
+            purpose is to capture sensitive information, such as passwords, credit card numbers, and personal messages,
+            often leading to identity theft or financial fraud.
+
+            <h3>Characteristics</h3>
+            Keyloggers can be software-based, running silently in the background, or hardware-based, physically attached
+            to a device. They often form part of broader malware campaigns, delivered through phishing emails, infected
+            websites, or malicious downloads.
+
+            <h3>Delivery Methods</h3>
+            Keyloggers are commonly spread through phishing scams, malicious attachments, or compromised websites.
+            Hardware keyloggers, meanwhile, require physical access to the target device, often hidden within keyboard
+            connectors or cables.
+
+            <h3>Symptoms</h3>
+            Keyloggers rarely display overt signs of infection, but users might notice increased system lag,
+            unauthorized account activities, or unexplained spikes in outgoing data traffic. Security software may
+            occasionally detect their presence.
+
+            <h3>Examples</h3>
+            Ardamax and Revealer Keylogger are widely recognized software keyloggers used for both legitimate monitoring
+            and malicious purposes. Advanced versions can also capture screenshots or record system activities in
+            addition to keystrokes.</p>
+        </div>
+        <div class="subsection">
+            <img src="{{ url_for('static', filename='images/key.jpg') }}" class="subsection-image">
+        </div>
+    </div>
+    <div id="section9" class="section">
+        <div class="content">
+            <h1>Phishing</h1>
+            <p>
+            <h3>Definition</h3>
+            Although not a virus itself, phishing is a cyber threat that uses fraudulent emails, messages, or websites
+            to deceive individuals into revealing sensitive information. Social engineering exploits human psychology to
+            manipulate victims into compromising security.
+
+            <h3>Characteristics</h3>
+            Phishing attacks typically impersonate trusted entities like banks, email providers, or government
+            organizations. They rely on urgency, fear, or curiosity to trick users into clicking malicious links,
+            downloading harmful files, or providing credentials.
+
+            <h3>Common Techniques</h3>
+            Phishing attacks may take the form of deceptive emails, fake login pages, or messages claiming account
+            issues. Spear-phishing, a targeted version, focuses on specific individuals or organizations. Other
+            techniques include vishing (voice phishing) and smishing (SMS phishing).
+
+            <h3>Impact</h3>
+            Successful phishing attacks can lead to data breaches, identity theft, and financial loss. Organizations may
+            suffer reputational damage, while individuals risk losing access to accounts or sensitive personal
+            information.
+
+            <h3>Examples</h3>
+            The 2016 phishing attack on John Podesta, a political advisor, led to a massive email leak. More recent
+            campaigns frequently impersonate popular services like PayPal or Microsoft to steal credentials.
+
+            </p>
+        </div>
+        <div class="subsection">
+            <img src="{{ url_for('static', filename='images/phis.jpg') }}" class="subsection-image">
+                </div>
+    </div>
+    <div id="section10" class="section">
+        <div class="content">
+            <h1>Advanced Persistent Threats (APTs)</h1>
+            <p>
+            <h3>Definition</h3>
+            APTs are sophisticated, prolonged cyberattacks targeting specific entities, such as governments,
+            corporations, or research institutions. They aim to gain unauthorized access and maintain a presence within
+            a network to steal data or disrupt operations over time.
+
+            <h3>Characteristics</h3>
+            APTs involve multiple stages, including reconnaissance, gaining initial access, establishing persistence,
+            and executing the attack. They are often state-sponsored and use zero-day vulnerabilities or custom-built
+            malware to bypass security measures.
+
+            <h3>Attack Lifecycle</h3>
+            The APT lifecycle begins with reconnaissance to gather intelligence on the target. Attackers then use
+            spear-phishing, exploits, or malware to gain access. Once inside, they establish persistence through
+            rootkits or backdoors, exfiltrate data, and remain undetected for months or years.
+
+            <h3>Impact</h3>
+            APTs can cause significant damage by stealing intellectual property, compromising critical infrastructure,
+            or disrupting government operations. Their stealthy nature often delays detection, amplifying the damage
+            caused.
+
+            <h3>Examples</h3>
+            Stuxnet, a state-sponsored attack, targeted Iran’s nuclear program, causing physical damage to centrifuges.
+            APT29, also known as Cozy Bear, is a Russian-linked group involved in cyber-espionage campaigns against
+            governments and organizations.</p>
+        </div>
+        <div class="subsection">
+            <img src="{{ url_for('static', filename='images/gg.jpg') }}" class="subsection-image">
+        </div>
+    </div>
+
+    <script>
+        const sections = document.querySelectorAll('.section');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Section</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/news.css') }}">
+</head>
+<body>
+    <div class="news-section">
+        <h1>Latest Cybersecurity News</h1>
+        <div class="news-grid">
+            {% for article in news %}
+            <div class="news-card">
+                <img src="{{ article.urlToImage }}" alt="{{ article.title }}" class="news-card-image">
+                <h3 class="news-card-title">{{ article.title }}</h3>
+                <p class="news-card-summary">{{ article.description }}</p>
+                <a href="{{ article.url }}" class="news-card-link" target="_blank">Read More</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

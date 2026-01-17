@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/scan.css') }}">
+    <script src="{{ url_for('static', filename='js/scan.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Scan Results</h1>
+        </header>
+        <section>
+            <p class="verdict"><strong>Final Verdict:</strong> <span id="verdict">{{ verdict }}</span></p>
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>Scanner</th>
+                        <th>Result</th>
+                        <th>Method</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for result in scan_results %}
+                    <tr class="{{ 'safe' if result.result == 'Safe' else 'malicious' }}">
+                        <td>{{ result.name }}</td>
+                        <td>{{ result.result }}</td>
+                        <td>{{ result.method }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div class="summary">
+                <h3>Summary</h3>
+                <ul>
+                    <li>Safe Scanners: {{ safe_count }}</li>
+                    <li>Malicious Scanners: {{ malicious_count }}</li>
+                    <li>Unsupported Scanners: {{ unsupported_count }}</li>
+                </ul>
+            </div>
+        </section>
+        <footer>
+            <button id="scan-again" onclick="goBackToScan()">Scan Another File</button>
+        </footer>
+    </div>
+</body>
+</html>

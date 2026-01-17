@@ -1,0 +1,140 @@
+/* styles.css */
+
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #343a40;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+}
+
+footer {
+    background-color: #343a40;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Card Styles */
+.card {
+    border-radius: 15px;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+    border-radius: 10px 10px 0 0;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.card-header .btn-link {
+    text-decoration: none;
+    color: white;
+    display: block;
+    text-align: left;
+}
+
+.card-header .btn-link:focus {
+    outline: none;
+}
+
+.card-body {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 0 0 10px 10px;
+}
+
+/* Accordion Colors */
+.bg-success {
+    background-color: #28a745 !important;
+}
+
+.bg-danger {
+    background-color: #dc3545 !important;
+}
+
+.bg-warning {
+    background-color: #ffc107 !important;
+    color: #212529;
+}
+
+/* Button Hover Effect */
+button {
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background-color: #0056b3;
+}
+
+/* Input Focus Styles */
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Custom Accordion Styles */
+.accordion .card {
+    margin-bottom: 20px; /* Adds spacing between cards */
+}
+
+.accordion .card-header .btn-link {
+    padding: 15px;
+    font-size: 1rem; /* Adjust font size for better readability */
+}
+
+.accordion .card-header.bg-success .btn-link {
+    color: white;
+}
+
+.accordion .card-header.bg-danger .btn-link {
+    color: white;
+}
+
+.accordion .card-header.bg-warning .btn-link {
+    color: #212529;
+}
+
+.accordion .card-header.bg-dark .btn-link {
+    color: white;
+}
+
+.accordion .card-header.bg-info .btn-link {
+    color: white;
+}
+
+.accordion .card-header.bg-primary .btn-link {
+    color: white;
+}
+
+/* Utility Classes */
+.shadow-sm {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+.text-dark {
+    color: #343a40 !important;
+}

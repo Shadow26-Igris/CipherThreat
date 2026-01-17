@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    text-align: center;
+    color: #00aeff;
+    margin-bottom: 20px;
+}
+
+.verdict {
+    text-align: center;
+    font-size: 18px;
+    padding: 10px;
+    border: 2px solid #007BFF;
+    border-radius: 8px;
+    background-color: #e9f5ff;
+    display: inline-block;
+    margin: 10px auto;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.results-table th,
+.results-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+.results-table tr {
+    opacity: 0;
+    animation: fadeInRows 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeInRows {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.results-table th {
+    background: #007BFF;
+    color: #fff;
+    animation: slideIn 1s ease-out;
+}
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+.results-table .safe td {
+    background-color: #e7fce7;
+}
+
+.results-table .malicious td {
+    background-color: #fce7e7;
+}
+
+.summary {
+    margin-top: 20px;
+}
+
+.summary ul {
+    list-style: none;
+    padding: 0;
+}
+
+.summary ul li {
+    margin: 5px 0;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+.results-table td, .results-table th {
+    transition: background-color 0.3s ease;
+}
+
+/* Add animation to form elements */
+.custom-file-upload {
+    padding: 10px;
+    background-color: #f4f4f9;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.custom-file-upload:hover {
+    background-color: #007BFF;
+    color: #fff;
+}

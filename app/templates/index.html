@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CipherThreat - Cybersecurity & Cybercrime Reporting</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+<!-- Header Section with Video Background and Welcome Text -->
+<header class="header">
+    <div class="header-video">
+        <video autoplay muted loop class="background-video">
+            <source src="{{ url_for('static', filename='videos/video.mp4') }}" type="video/mp4">
+        </video>
+    </div>
+    <div class="header-content">
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='images/Designer.jpeg') }}" alt="CipherThreat Logo" class="logo">
+        </div>
+        <div class="welcome-text-container">
+            <div class="welcome-text">
+                <h1>Welcome to CipherThreat</h1>
+                <p>Your ultimate platform for cybersecurity, crime reporting, and online protection</p>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+<!-- Navigation Links Section -->
+<section class="links-section">
+  <div class="links-box">
+    <a href="{{ url_for('main_routes.home') }}"><i class="fas fa-home"></i> Home</a>
+    <a href="#about"><i class="fas fa-info-circle"></i> About</a>
+    <a href="#crime"><i class="fas fa-shield-alt"></i> Types of Crime</a>
+    <a href="#service"><i class="fas fa-concierge-bell"></i> Services</a>
+    <a href="{{ url_for('auth_routes.login') }}" id="login-btn"><i class="fas fa-sign-in-alt"></i> Login</a>
+    <a href="{{ url_for('news_routes.home') }}">news</a>
+    
+
+
+</div>
+    <div class="search-container">
+      <input type="text" class="search-input" placeholder="Search here...">
+      <button class="search-button">
+        <img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="Search Icon">
+      </button>
+  </div>
+</section>
+
+
+<!-- What is Cybersecurity Section -->
+  <section class="cybersecurity-info">
+    <h2 id="about">What is Cybersecurity?</h2>
+    <p>In today’s digital era, businesses and industries face an ever-growing threat from cybercrimes. From identity theft and phishing scams to malware, ransomware, and sophisticated data breaches, cyberattacks have become a daily challenge. At CipherThreat, our mission is to empower organizations with knowledge and tools to combat these threats effectively.
+
+Our platform is a comprehensive hub for understanding the complexities of cybersecurity. We provide detailed insights into various cyber threats, how they occur, and actionable strategies to mitigate them. Whether you're navigating the challenges of ransomware that locks critical data or phishing scams designed to steal sensitive information, CipherThreat is here to help businesses and industries stay one step ahead of attackers.
+
+Beyond education, we take pride in engaging and empowering our users. Our interactive quizzes are designed to test and enhance your cybersecurity knowledge, making learning both fun and practical. These quizzes help individuals and organizations sharpen their awareness of cyber risks and prepare for real-world challenges.
+
+We also offer a complaint facility, providing a secure and straightforward way to report cybercrimes. Victims of cyberattacks can file complaints on our platform and receive guidance to respond effectively. Our goal is to support organizations not only in understanding risks but also in taking proactive steps to safeguard their operations.
+
+At CipherThreat, we combine education, action, and engagement to build a secure digital environment where businesses can thrive confidently. Together, let’s create a future where cybersecurity is a strength, not a vulnerability.</p>
+</section>
+
+<!-- Cybercrime-categories -->
+
+<div class="cybercrime-categories-section">
+    <div class="overlay"></div>
+    <h1 id="crime" class="category-title">Cybercrime Categories</h1>
+    <div class="table-layout">
+      <div class="row">
+        <div class="cell">
+          <div class="content">
+            HACKING 
+            <a href="{{ url_for('main_routes.cybercrime') }}" class="view-more">View More</a>
+          </div>
+        </div>
+        <div class="cell">
+          <div class="content">
+            CHILD PORNOGRAPHY / CHILD SEXUAL ABUSE MATERIAL (CSAM)
+            <a href="{{ url_for('main_routes.cybercrime') }}" class="view-more">View More</a>
+          </div>
+        </div>
+        <div class="cell">
+          <div class="content">
+            CYBER TERRORISM
+            <a href="{{ url_for('main_routes.cybercrime') }}" class="view-more">View More</a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="cell">
+          <div class="content">
+            PUBLISHING / TRANSMITTING OF EXPLICIT MATERIAL IN ELECTRONIC FORM
+            <a href="{{ url_for('main_routes.cybercrime') }}" class="view-more">View More</a>
+          </div>
+        </div>
+        <div class="cell">
+          <div class="content">
+            ONLINE AND SOCIAL MEDIA RELATED CRIME
+            <a href="{{ url_for('main_routes.cybercrime') }}" class="view-more">View More</a>
+          </div>
+        </div>
+        <div class="cell">
+          <div class="content">
+            ONLINE FINANCIAL FRAUD
+            <a href="{{ url_for('main_routes.cybercrime') }}" class="view-more">View More</a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+  <br><br>
+
+  <br><br>
+
+  <section class="complaint-section">
+    <div class="container">
+      <h2 class="section-title">Why Should You File a Complaint?</h2>
+      <p class="section-description">
+        Reporting cybercrimes through this platform is crucial in helping us combat the growing threat of cyberattacks. By filing a complaint, you play a vital role in:
+        <ul>
+          <li><strong>Protecting individuals, businesses, and the community:</strong> By reporting incidents, we can take action to prevent further damage.</li>
+          <li><strong>Ensuring efficiency and reliability:</strong> Our platform guarantees a swift and secure process to address your concerns.</li>
+          <li><strong>Raising awareness and encouraging action:</strong> Cyber threats are becoming more sophisticated, and it's vital we work together to stop them.</li>
+        </ul>
+        Your contribution makes a difference in keeping everyone safer in this digital world.
+      </p>
+      <br><br>
+      <a href="{{ url_for('complaint_routes.complaint') }}" class="cta-button">File Your Complaint Now</a>
+    </div>
+  </section>
+  
+<br><br>
+
+<!-- Cyber Threat Categories -->
+
+<div class="cyberthreat-categories-section">
+  <div class="overlay"></div>
+  <h1 class="category-title">Cyber Threat Categories</h1>
+  <div class="table-layout">
+    <div class="row">
+      <div class="cell">
+        <div class="content">
+          Computer Viruses 
+          <a href="{{ url_for('main_routes.cyberthreat') }}" class="view-more">View More</a>
+        </div>
+      </div>
+      <div class="cell">
+        <div class="content">
+          WORMS
+          <a href="{{ url_for('main_routes.cyberthreat') }}" class="view-more">View More</a>
+        </div>
+      </div>
+      <div class="cell">
+        <div class="content">
+          TROJANS 
+          <a href="{{ url_for('main_routes.cyberthreat') }}" class="view-more">View More</a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="cell">
+        <div class="content">
+          RANSOMWARE
+          <a href="{{ url_for('main_routes.cyberthreat') }}" class="view-more">View More</a>
+        </div>
+      </div>
+      <div class="cell">
+        <div class="content">
+          SPYWARE
+          <a href="{{ url_for('main_routes.cyberthreat') }}" class="view-more">View More</a>
+        </div>
+      </div>
+      <div class="cell">
+        <div class="content">
+          ADWARE 
+          <a href="{{ url_for('main_routes.cyberthreat') }}" class="view-more">View More</a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="cell">
+        <div class="content">
+          ROOTKITS 
+          <a href="{{ url_for('main_routes.cyberthreat') }}" class="view-more">View More</a>
+        </div>
+      </div>
+      <div class="cell">
+        <div class="content">
+          KEYLOGGERS
+          <a href="{{ url_for('main_routes.cyberthreat') }}" class="view-more">View More</a>
+        </div>
+      </div>
+      <div class="cell">
+        <div class="content">
+          PHISHING
+          <a href="{{ url_for('main_routes.cyberthreat') }}" class="view-more">View More</a>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+<br><br>
+
+
+<section class="volunteer-section">
+  <div class="container">
+    <h2 class="section-title">Join Us as a Volunteer!</h2>
+    <p class="section-description">
+      Cybercrime is an ever-growing threat, and together, we can make a real impact. By volunteering with us, you can:
+      <ul>
+        <li><strong>Help tackle cybercrimes:</strong> Assist in spreading awareness and helping victims of online threats.</li>
+        <li><strong>Contribute to community safety:</strong> Work with experts to help businesses, schools, and individuals protect themselves online.</li>
+        <li><strong>Gain valuable experience:</strong> Learn from professionals and build a stronger understanding of the cybersecurity field.</li>
+      </ul>
+      Whether you are a student, professional, or just passionate about fighting cybercrimes, we welcome your help.
+    </p>
+    <br><br>
+    <a href="{{ url_for('main_routes.volunteer') }}" class="cta-button">Become a Volunteer</a>
+  </div>
+</section>
+
+
+<br><br>
+
+
+
+<!-- Additional Services Section -->
+<section class="services-section">
+    <h2 id="service">Our Services</h2>
+    <p>Why Choose Our Services? </p>
+</p>
+    In an era where everything is going online and artificial intelligence is reshaping the way we live and work, the need for robust cybersecurity has never been greater. Cybercrimes like data breaches, phishing attacks, and ransomware are growing more sophisticated, creating challenges that many organizations struggle to address. This is particularly true for businesses and industries led by individuals from earlier generations, who may not be as familiar with the complexities of today’s digital threats.
+
+At CipherThreat, we specialize in providing cybersecurity solutions tailored for industries, businesses, schools, and local organizations. Our goal is to bridge the gap between traditional operations and modern security needs. We understand the unique challenges companies face in protecting their digital assets in this rapidly evolving AI-driven world.
+
+Choosing our services means choosing proactive protection. We don’t just address existing vulnerabilities; we help you anticipate future threats, ensuring your operations remain secure and resilient. Whether you’re running a school that needs to protect student data, a local business moving into the digital space, or an industry navigating global cybersecurity challenges, we are here to help.
+
+Cybercrimes happening around us are harder to tackle alone, but with CipherThreat, you have a trusted partner to safeguard your operations. Don’t wait until it’s too late—choose security, choose CipherThreat.</p><br><br>
+    <div class="service-links">
+        <a href="{{ url_for('main_routes.bs') }}">School Facilities</a>
+        <a href="{{ url_for('main_routes.bs') }}">Business Solutions</a>
+        <a href="{{ url_for('main_routes.bs') }}">Industry Support</a>
+       
+    </div>
+</section>
+
+<section class="scanning-section">
+  <div class="container">
+    <h2 class="section-title">Why You Should Scan Your Files and System for Threats</h2>
+
+    <div class="scan-container">
+      <div class="scan-part">
+        <h3 class="sub-title">Scan Your Files for Malware</h3>
+        <p class="reason">
+          Regular file scanning ensures your files remain free from malicious software that could compromise your system. Here's why it's crucial:
+        </p>
+        <ul class="reasons-list">
+          <li><strong>Protect Against Malware:</strong> Detect and eliminate harmful threats before they cause damage.</li>
+          <li><strong>Prevent Data Loss:</strong> Avoid the risk of losing important files to ransomware or viruses.</li>
+          <li><strong>Maintain System Integrity:</strong> Keep your device running smoothly without interference from malicious software.</li>
+        </ul>
+        <a href="{{ url_for('scan_routes.scan_file') }}" class="cta-button">Scan Your File Now</a>
+      </div>
+
+      <div class="scan-part">
+        <h3 class="sub-title">Scan for Vulnerabilities in Your System</h3>
+        <p class="reason">
+          Vulnerability scanning helps you identify and fix weaknesses that could be exploited by cybercriminals. Here's why it matters:
+        </p>
+        <ul class="reasons-list">
+          <li><strong>Strengthen Security:</strong> Fix potential vulnerabilities before attackers can exploit them.</li>
+          <li><strong>Stay Up-to-Date:</strong> Ensure your system is always protected with the latest security patches.</li>
+          <li><strong>Ensure Peace of Mind:</strong> Regular scans prevent costly breaches and protect your reputation.</li>
+        </ul>
+        <a href="{{ url_for('vulnerability_scan_routes.scan_vulnerability') }}" class="cta-button">Run Vulnerability Scan</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer">
+    <p>&copy; 2023 CipherThreat. All Rights Reserved.</p>
+</footer>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

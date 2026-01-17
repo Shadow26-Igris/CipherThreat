@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cybercrime Awareness</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cybercrime.css') }}">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h1>Cybercrime Awareness</h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+      <!-- Main Content Section with Accordion for Cybercrime Categories -->
+    <main class="container my-5">
+        <h2 class="text-center mb-4 text-dark">Cyber Crime Categories</h2>
+
+        <div class="accordion" id="cyberCrimeAccordion">
+            <!-- Hacking Section -->
+            <div class="card shadow-sm mb-4">
+                <div class="card-header rounded-top bg-success text-white" id="headingHacking">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link text-white" type="button" data-toggle="collapse" data-target="#collapseHacking" aria-expanded="true" aria-controls="collapseHacking">
+                            Hacking
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseHacking" class="collapse" aria-labelledby="headingHacking" data-parent="#cyberCrimeAccordion">
+                    <div class="card-body">
+                         <p class="lead">Hacking involves unauthorized access to computer systems, networks, or devices. Hackers exploit vulnerabilities in security systems to steal sensitive information, disrupt services, or cause other forms of damage. There are various types of hackers, each with different intentions and methods.</p>
+
+                    <h3 class="mt-4">Types of Hackers</h3>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">Black Hat Hackers</h5>
+                                    <p class="card-text">These hackers are malicious and perform illegal activities for personal gain. They exploit vulnerabilities to cause harm or steal data.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">White Hat Hackers</h5>
+                                    <p class="card-text">Also known as ethical hackers, they work to improve security by identifying and fixing vulnerabilities with the consent of the organization they are hired by.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">Gray Hat Hackers</h5>
+                                    <p class="card-text">These hackers fall in between black and white hat hackers. They may exploit vulnerabilities but don’t necessarily have malicious intent, though their actions can still cause harm.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="mt-4">Common Hacking Methods</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item">Phishing: Fraudulent attempts to obtain sensitive information through emails or websites.</li>
+                        <li class="list-group-item">DDoS Attacks: Overloading a system or network with excessive traffic to cause disruption.</li>
+                        <li class="list-group-item">Malware: Software designed to infiltrate and damage computer systems.</li>
+                        <li class="list-group-item">SQL Injection: Exploiting vulnerabilities in database-driven applications to execute malicious SQL queries.</li>
+                    </ul>
+
+                    <h3 class="mt-4">How to Protect Yourself from Hackers</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item">Use strong passwords and enable two-factor authentication wherever possible.</li>
+                        <li class="list-group-item">Regularly update software to patch known vulnerabilities.</li>
+                        <li class="list-group-item">Be cautious when clicking links in emails or messages from unknown sources.</li>
+                        <li class="list-group-item">Use reliable antivirus and firewall protection.</li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Financial Fraud Section -->
+            <div class="card shadow-sm mb-4">
+                <div class="card-header rounded-top bg-danger text-white" id="headingFraud">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link text-white" type="button" data-toggle="collapse" data-target="#collapseFraud" aria-expanded="false" aria-controls="collapseFraud">
+                            Financial Fraud
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseFraud" class="collapse" aria-labelledby="headingFraud" data-parent="#cyberCrimeAccordion">
+                    <div class="card-body">
+                        <p class="lead">Financial fraud is a serious crime that involves the use of deception or manipulation to steal money or valuables. It can take many forms, from fraudulent investment schemes to credit card fraud. Understanding financial fraud is essential for protecting your wealth and avoiding falling victim to criminals.</p>
+
+                <!-- Timeline of Financial Fraud Types -->
+                <h3 class="mt-4">Timeline of Financial Fraud</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon bg-primary">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h5>Credit Card Fraud</h5>
+                            <p>Fraudulent activities involving the unauthorized use of someone's credit or debit card to make purchases or withdraw money. This can happen online or through physical theft of the card details.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon bg-success">
+                            <i class="fas fa-money-bill-alt"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h5>Investment Fraud</h5>
+                            <p>Fake investment opportunities that promise high returns with little risk. Scammers often create fake platforms or use legitimate platforms to deceive investors into losing their money.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon bg-warning">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h5>Phishing Scams</h5>
+                            <p>Phishing involves sending fraudulent emails or messages that appear to be from legitimate organizations to steal sensitive personal information like banking credentials.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon bg-danger">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h5>Identity Theft</h5>
+                            <p>Identity theft occurs when a criminal obtains and uses someone's personal information to commit fraud, open accounts, or steal funds from their existing accounts.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Chart Section -->
+                <h3 class="mt-4">Financial Fraud Statistics</h3>
+                <div id="fraudChartContainer" class="mb-4">
+                    <canvas id="fraudChart"></canvas>
+                </div>
+
+                <script>
+                    var ctx = document.getElementById('fraudChart').getContext('2d');
+                    var fraudChart = new Chart(ctx, {
+                        type: 'pie',
+                        data: {
+                            labels: ['Credit Card Fraud', 'Investment Fraud', 'Phishing Scams', 'Identity Theft'],
+                            datasets: [{
+                                data: [40, 25, 20, 15],
+                                backgroundColor: ['#007bff', '#28a745', '#ffc107', '#dc3545'],
+                                hoverBackgroundColor: ['#0056b3', '#218838', '#e0a800', '#c82333'],
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                legend: {
+                                    position: 'top',
+                                },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function(tooltipItem) {
+                                            return tooltipItem.label + ': ' + tooltipItem.raw + '%';
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    });
+                </script>
+
+                <!-- How to Protect Yourself Section -->
+                <h3 class="mt-4">How to Protect Yourself from Financial Fraud</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title text-center"><i class="fas fa-lock"></i> Secure Your Accounts</h5>
+                                <p class="card-text">Ensure all your financial accounts have strong passwords and enable two-factor authentication. Regularly update your account security settings.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title text-center"><i class="fas fa-search"></i> Be Cautious of Scams</h5>
+                                <p class="card-text">Be suspicious of unsolicited messages or offers. Always verify the legitimacy of investment opportunities, emails, or phone calls asking for personal or financial details.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title text-center"><i class="fas fa-shield-alt"></i> Monitor Your Statements</h5>
+                                <p class="card-text">Regularly check your bank statements and credit reports for any unauthorized transactions or suspicious activity. Early detection can help prevent significant loss.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title text-center"><i class="fas fa-phone-alt"></i> Report Fraud Quickly</h5>
+                                <p class="card-text">If you suspect you’ve been a victim of financial fraud, report it to your bank and relevant authorities immediately to minimize damage and prevent further loss.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Child Exploitation Section -->
+            <div class="card shadow-sm mb-4">
+                <div class="card-header rounded-top bg-warning text-dark" id="headingExploitation">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link text-dark" type="button" data-toggle="collapse" data-target="#collapseExploitation" aria-expanded="false" aria-controls="collapseExploitation">
+                            Child Exploitation
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseExploitation" class="collapse" aria-labelledby="headingExploitation" data-parent="#cyberCrimeAccordion">
+                    <div class="card-body">
+                       <p class="lead">Child abuse refers to any mistreatment of a child that results in harm or potential harm. This includes physical, emotional, and sexual abuse, as well as neglect. It can occur in various forms and settings, including within families, schools, or online environments.</p>
+
+                <h3 class="mt-4">Types of Child Abuse</h3>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Physical Abuse</h5>
+                                <p class="card-text">Physical abuse involves inflicting harm on a child's body, such as hitting, burning, or other forms of physical violence. It can lead to serious injuries and long-term emotional trauma.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Emotional Abuse</h5>
+                                <p class="card-text">Emotional abuse includes actions that harm a child's self-esteem and mental well-being, such as verbal insults, threats, or constant criticism. It can result in lasting psychological effects.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Sexual Abuse</h5>
+                                <p class="card-text">Sexual abuse refers to any sexual activity forced upon a child. This includes molestation, exploitation, or any form of sexual assault. It leaves deep scars, both physical and psychological.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="mt-4">Signs of Child Abuse</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">Unexplained injuries, such as bruises or burns.</li>
+                    <li class="list-group-item">Withdrawal from social interactions or extreme fear of certain individuals.</li>
+                    <li class="list-group-item">Changes in behavior, including aggression, anxiety, or depression.</li>
+                    <li class="list-group-item">Inappropriate sexual knowledge or behavior for their age.</li>
+                </ul>
+
+                <h3 class="mt-4">How to Protect Children</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">Educate children about their rights and teach them how to recognize inappropriate behavior.</li>
+                    <li class="list-group-item">Establish open communication with children, so they feel safe to report any incidents.</li>
+                    <li class="list-group-item">Monitor online activity and ensure children are not exposed to harmful content.</li>
+                    <li class="list-group-item">Report suspected cases of abuse to the appropriate authorities immediately.</li>
+                </ul>
+                    </div>
+                </div>
+            </div>
+          
+<!-- social Section -->
+            <div class="card shadow-sm mb-4">
+                <div class="card-header rounded-top bg-primary text-white" id="headingSocialMedia">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link text-white" type="button" data-toggle="collapse" data-target="#collapseSocialMedia" aria-expanded="false" aria-controls="collapseSocialMedia">
+                            Social Media Crime
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseSocialMedia" class="collapse" aria-labelledby="headingSocialMedia" data-parent="#cyberCrimeAccordion">
+                    <div class="card-body">
+                       <p class="lead">Social media platforms have become integral to our daily lives, but they also serve as breeding grounds for various forms of cybercrime. These crimes can include identity theft, cyberbullying, online harassment, and more, all of which can have significant personal, legal, and societal consequences.</p>
+
+                <!-- Overview of Social Media Crimes -->
+                <h3 class="mt-4">Overview of Social Media Crimes</h3>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title text-center"><i class="fas fa-user-secret"></i> Identity Theft</h5>
+                                <p class="card-text">Criminals can steal personal information on social media to commit fraud, steal money, or damage someone's reputation.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title text-center"><i class="fas fa-bullhorn"></i> Cyberbullying</h5>
+                                <p class="card-text">The act of bullying or harassing individuals on social media platforms. This can lead to emotional distress or severe mental health issues.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title text-center"><i class="fas fa-pause-circle"></i> Online Harassment</h5>
+                                <p class="card-text">Harassment on social media involves unwanted, offensive, or threatening behavior that causes distress to the victim.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Collapsible Detailed Information -->
+                <h3 class="mt-4">Types of Social Media Crimes</h3>
+                <div class="accordion" id="socialMediaCrimeAccordion">
+                    <div class="card">
+                        <div class="card-header" id="identityTheftHeader">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#identityTheftContent" aria-expanded="true" aria-controls="identityTheftContent">
+                                    <i class="fas fa-user-lock"></i> Identity Theft
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="identityTheftContent" class="collapse show" aria-labelledby="identityTheftHeader" data-parent="#socialMediaCrimeAccordion">
+                            <div class="card-body">
+                                Identity theft involves criminals using personal information stolen from social media to impersonate someone, access their financial accounts, or engage in fraudulent activities. It can take various forms, including phishing and hacking accounts.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="cyberbullyingHeader">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#cyberbullyingContent" aria-expanded="false" aria-controls="cyberbullyingContent">
+                                    <i class="fas fa-comment-dots"></i> Cyberbullying
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="cyberbullyingContent" class="collapse" aria-labelledby="cyberbullyingHeader" data-parent="#socialMediaCrimeAccordion">
+                            <div class="card-body">
+                                Cyberbullying involves using digital platforms to threaten, insult, or harass individuals, often leading to long-lasting emotional damage. It can involve spreading rumors, sending harmful messages, or sharing embarrassing images.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="onlineHarassmentHeader">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#onlineHarassmentContent" aria-expanded="false" aria-controls="onlineHarassmentContent">
+                                    <i class="fas fa-thumbs-down"></i> Online Harassment
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="onlineHarassmentContent" class="collapse" aria-labelledby="onlineHarassmentHeader" data-parent="#socialMediaCrimeAccordion">
+                            <div class="card-body">
+                                Online harassment includes deliberate and persistent behavior that causes emotional distress, such as sending threatening messages, doxxing (revealing personal details), or stalking someone online.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Protection Measures Section -->
+                <h3 class="mt-4">How to Protect Yourself from Social Media Crimes</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title text-center"><i class="fas fa-key"></i> Strengthen Your Privacy Settings</h5>
+                                <p class="card-text">Ensure that your social media accounts have strong privacy settings. Limit the amount of personal information visible to others, and regularly review who has access to your content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title text-center"><i class="fas fa-shield-alt"></i> Use Strong Passwords</h5>
+                                <p class="card-text">Create unique and strong passwords for all social media accounts to reduce the risk of hacking. Enabling two-factor authentication adds an extra layer of security.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title text-center"><i class="fas fa-ban"></i> Report Suspicious Activity</h5>
+                                <p class="card-text">If you notice suspicious activity, whether it’s a fraudulent account, harmful behavior, or harassment, report it immediately to the platform administrators.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title text-center"><i class="fas fa-comments"></i> Educate Yourself and Others</h5>
+                                <p class="card-text">Stay informed about social media crimes and educate others, especially young people, about the dangers and how to protect themselves online.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+<!-- electronic Section -->
+            <div class="card shadow-sm mb-4">
+                <div class="card-header rounded-top bg-info text-white" id="headingElectronic">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link text-white" type="button" data-toggle="collapse" data-target="#collapseElectronic" aria-expanded="false" aria-controls="collapseElectronic">
+                            Electronic
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseElectronic" class="collapse" aria-labelledby="headingElectronic" data-parent="#cyberCrimeAccordion">
+                    <div class="card-body">
+                       <p class="lead">Explicit material includes content that is sexually explicit, graphically violent, or otherwise harmful, often involving illegal activities or non-consensual distribution. Such material can cause psychological harm and is illegal when it involves minors or non-consensual sharing. Below, we explore different aspects of explicit material and its impact.</p>
+
+                <!-- Types of Explicit Material -->
+                <h3 class="mt-4">Types of Explicit Material</h3>
+                <div class="accordion" id="explicitMaterialAccordion">
+                    <div class="card">
+                        <div class="card-header" id="pornographyHeader">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#pornographyContent" aria-expanded="true" aria-controls="pornographyContent">
+                                    <i class="fas fa-film"></i> Pornographic Content
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="pornographyContent" class="collapse show" aria-labelledby="pornographyHeader" data-parent="#explicitMaterialAccordion">
+                            <div class="card-body">
+                                Pornography is explicit content that often exploits individuals, particularly when non-consensual or involving minors. The distribution of such material without consent is illegal and harmful to the victims involved.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="violentMediaHeader">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#violentMediaContent" aria-expanded="false" aria-controls="violentMediaContent">
+                                    <i class="fas fa-hand-peace"></i> Violent Media
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="violentMediaContent" class="collapse" aria-labelledby="violentMediaHeader" data-parent="#explicitMaterialAccordion">
+                            <div class="card-body">
+                                Violent media depicts graphic violence, harm, or abuse. It may promote dangerous actions or desensitize individuals to violence. When it involves minors or non-consensual sharing, it becomes illegal and highly damaging.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="illegalContentHeader">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#illegalContent" aria-expanded="false" aria-controls="illegalContent">
+                                    <i class="fas fa-ban"></i> Illegal Content
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="illegalContent" class="collapse" aria-labelledby="illegalContentHeader" data-parent="#explicitMaterialAccordion">
+                            <div class="card-body">
+                                This category includes content that promotes illegal activities like abuse, exploitation, or harm to individuals. The distribution of such material can result in severe legal consequences for those involved.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Legal and Social Implications -->
+                <h3 class="mt-4">Legal and Social Implications</h3>
+                <ul class="list-group">
+                    <li class="list-group-item"><i class="fas fa-gavel"></i> Legal ramifications for the creators, distributors, and consumers of explicit material can include severe criminal charges, especially when minors are involved or consent is not given.</li>
+                    <li class="list-group-item"><i class="fas fa-heart"></i> Exposure to explicit material can cause psychological harm to victims, potentially leading to trauma, anxiety, or other mental health issues.</li>
+                    <li class="list-group-item"><i class="fas fa-users"></i> On a societal level, the proliferation of explicit material can perpetuate harmful stereotypes and contribute to a culture of objectification and exploitation.</li>
+                    <li class="list-group-item"><i class="fas fa-bullhorn"></i> Cyberbullying and harassment can arise when explicit material is used as a tool for manipulation or blackmail.</li>
+                </ul>
+
+                <!-- Protection Methods -->
+                <h3 class="mt-4">How to Protect Yourself and Others</h3>
+                <div class="list-group">
+                    <button type="button" class="list-group-item list-group-item-action">
+                        <i class="fas fa-shield-alt"></i> Use content filtering and parental controls to block explicit material.
+                    </button>
+                    <button type="button" class="list-group-item list-group-item-action">
+                        <i class="fas fa-comments"></i> Educate children and young adults on the risks and consequences of explicit content.
+                    </button>
+                    <button type="button" class="list-group-item list-group-item-action">
+                        <i class="fas fa-exclamation-circle"></i> Report explicit material that violates laws or platform policies to relevant authorities.
+                    </button>
+                    <button type="button" class="list-group-item list-group-item-action">
+                        <i class="fas fa-hands-helping"></i> Support victims of exploitation by offering resources and connecting them with legal aid.
+                    </button>
+                    </div>
+                </div>
+            </div>
+
+<!-- cyber terror Section -->
+            <div class="card shadow-sm mb-4">
+                <div class="card-header rounded-top bg-dark text-white" id="headingCyberTerrorism">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link text-white" type="button" data-toggle="collapse" data-target="#collapseCyberTerrorism" aria-expanded="false" aria-controls="collapseCyberTerrorism">
+                            Cyber Terrorism
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseCyberTerrorism" class="collapse" aria-labelledby="headingCyberTerrorism" data-parent="#cyberCrimeAccordion">
+                    <div class="card-body">
+                        <p class="lead">Cyber terrorism involves the use of digital tools and techniques to launch attacks on information systems, infrastructure, or digital platforms for political or ideological gain. These attacks aim to disrupt services, steal sensitive data, or instill fear among the public.</p>
+
+                <h3 class="mt-4">Methods of Cyber Terrorism</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Distributed Denial of Service (DDoS)</h5>
+                                <p class="card-text">DDoS attacks overwhelm a website or network with excessive traffic, rendering it unavailable to users. Cyber terrorists often use these attacks to disrupt government operations or vital services.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Data Breaches & Hacking</h5>
+                                <p class="card-text">Cyber terrorists may hack into sensitive systems to steal, manipulate, or release classified data in an attempt to undermine national security or cause fear among the population.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="mt-4">Impact of Cyber Terrorism</h3>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">National Security Threats</h5>
+                                <p class="card-text">Cyber terrorism can compromise national defense, military communications, and critical infrastructure, leading to large-scale chaos and disruption.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Economic Losses</h5>
+                                <p class="card-text">Disruptions caused by cyber terrorism can result in massive economic losses, including the shutdown of key industries and businesses, leading to loss of revenue and consumer confidence.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Public Panic</h5>
+                                <p class="card-text">These attacks are often designed to generate fear and panic within the public, leading to widespread societal instability.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="mt-4">How to Defend Against Cyber Terrorism</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">Implement strong encryption methods to protect sensitive data from unauthorized access.</li>
+                    <li class="list-group-item">Ensure robust firewalls and intrusion detection systems to prevent unauthorized access to critical systems.</li>
+                    <li class="list-group-item">Regularly update and patch software to close security vulnerabilities that could be exploited by attackers.</li>
+                    <li class="list-group-item">Establish comprehensive disaster recovery plans to minimize the impact of cyber attacks on essential services.</li>
+                </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white py-3">
+        <div class="container text-center">
+            <p>&copy; 2025 Cybercrime Awareness. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Add Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

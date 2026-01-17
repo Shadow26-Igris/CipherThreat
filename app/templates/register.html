@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="register-container">
+        <h2>Register</h2>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <ul>
+        {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endwith %}
+
+   
+
+        <form method="POST" action="{{ url_for('auth_routes.register') }}">
+            <input type="text" name="username" id="username" placeholder="Username" required>
+            <input type="email" name="email" id="email" placeholder="Email" required> <!-- Email field -->
+            <input type="number" id="age" name="age" placeholder="Enter your age" required>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" pattern="[0-9]{10}" required>
+            <textarea id="address" name="address" placeholder="Enter your address" required></textarea>
+            <input type="text" id="nationality" name="nationality" placeholder="Enter your nationality" required>
+            
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+        
+            <input type="password" name="password" id="password" placeholder="Password" required>
+            <button type="submit">Register</button>
+        </form>
+        
+        <p>Already have an account? <a href="{{ url_for('auth_routes.login') }}">Login here</a></p>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/register.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity for SMBs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ffcc00, #e0e0e0); /* Amber background */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            font-size: 1.1rem; /* Increased font size */
+            scroll-behavior: smooth; /* Smooth scrolling */
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #003f7d; /* Blue background */
+            padding: 1rem;
+            list-style: none;
+            margin: 0;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffcc00; /* Amber color on hover */
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 280px;
+            height: 100%;
+            background: linear-gradient(180deg, #004d99, #003f7d); /* Gradient from blue */
+            color: white;
+            padding: 30px 20px;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+            border-right: 3px solid #ffcc00; /* Amber border */
+            transition: width 0.3s ease-in-out;
+        }
+
+        .sidebar.collapsed {
+            width: 80px;
+        }
+
+        .sidebar h2 {
+            color: #ffcc00; /* Amber color for title */
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 15px 0;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: background-color 0.3s;
+            text-align: center;
+        }
+
+        .sidebar a:hover {
+            background-color: #ffcc00; /* Amber hover background */
+            color: #004d99; /* Blue text color on hover */
+        }
+
+        .sidebar .toggle-btn {
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background-color: #ffcc00; /* Amber color for toggle */
+            color: #004d99; /* Blue color for text */
+            border: none;
+            padding: 10px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        main {
+            margin-left: 300px;
+            padding: 40px;
+            width: calc(100% - 340px);
+            transition: margin-left 0.3s;
+        }
+
+        header {
+            background: linear-gradient(45deg, #003f7d, #004d99); /* Blue gradient background */
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            color: #004d99; /* Blue color for section titles */
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #004d99; /* Blue footer background */
+            color: white;
+            margin-top: 30px;
+            font-size: 1.1rem;
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+            position: relative;
+            border-radius: 8px;
+            padding: 20px;
+            background: linear-gradient(to bottom right, #f9f9f9, #e6f0ff); /* Light amber-blue gradient */
+        }
+
+        .section-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .section-text {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .section-img {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .section-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .section-image:hover {
+            transform: scale(1.05); /* Image hover effect */
+        }
+
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .support-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .support-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-section {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        form input, form textarea, form button {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1.1rem;
+        }
+
+        form button {
+            background: #003f7d;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background: #002652;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+        <h1 style="color: #FFBF00;">Resources for SMBs</h1>
+        <a href="password-policies.html">Strong Password Policies</a>
+        <a href="network-security.html">Securing Your Network</a>
+        <a href="incident-response.html">Incident Response Checklist</a>
+        <a href="employee-training.html">Employee Training Practices</a>
+    </div>
+
+    <main>
+        <header>
+            <h1><span style="color: #FFBF00;">CipherThreat</span> Resources for SMBs</h1>
+        </header>
+        <nav>
+             <a href="main page.html">Home</a>
+            <a href="#about">About</a>
+            <a href="#importance">Importance</a>
+            <a href="#support">Support</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <section id="about">
+            <h2>About Our Cybersecurity Support</h2>
+            <div class="section-content">
+                <div class="section-text">
+                    <p>
+                        Cybersecurity is no longer optional—it’s essential for survival in today’s digital-first economy. 
+                        Small and medium-sized businesses (SMBs) face unique challenges, often lacking the resources to implement 
+                        enterprise-level protections. As a result, they are increasingly becoming the prime target for cyberattacks. 
+                        Our mission is to provide affordable and tailored cybersecurity solutions to help SMBs mitigate risks and protect 
+                        their most valuable assets—data, systems, and reputation.
+                    </p>
+                </div>
+                <div class="section-img">
+                    <img src="https://via.placeholder.com/500x300.png?text=Cybersecurity+Support" alt="Cybersecurity Support" class="section-image">
+                </div>
+            </div>
+        </section>
+
+        <section id="importance">
+            <h2>Why Cybersecurity Matters for SMBs</h2>
+            <div class="section-content">
+                <div class="section-text">
+                    <p>
+                        Small and medium-sized businesses (SMBs) are increasingly becoming the prime targets for cybercriminals. 
+                        Due to the limited resources many SMBs have for cybersecurity, they are often seen as easy targets for attacks. 
+                        Cyberattacks such as data breaches, ransomware, and phishing can lead to financial losses, reputational damage, 
+                        and legal consequences.
+                    </p>
+                </div>
+                <div class="section-img">
+                    <img src="https://via.placeholder.com/500x300.png?text=Cybersecurity+Threats" alt="Cybersecurity Threats" class="section-image">
+                </div>
+            </div>
+        </section>
+
+        <section id="support">
+            <h2>Support for SMBs</h2>
+            <div class="support-grid">
+                <div class="support-item">
+                    <h3>24/7 Security Monitoring</h3>
+                    <p>Stay protected with around-the-clock surveillance of your digital assets, detecting threats before they cause harm.</p>
+                </div>
+                <div class="support-item">
+                    <h3>Incident Response Planning</h3>
+                    <p>Have a plan in place for quick and effective action during a cybersecurity incident to minimize damage.</p>
+                </div>
+                <div class="support-item">
+                    <h3>Employee Training</h3>
+                    <p>Ensure your employees are aware of cybersecurity threats and know how to recognize and prevent them.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2>Contact Us</h2>
+            <form onsubmit="return confirmSubmission()">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 CipherThreat. All Rights Reserved.</p>
+        </footer>
+    </main>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('collapsed');
+            const main = document.querySelector('main');
+            main.style.marginLeft = sidebar.classList.contains('collapsed') ? '80px' : '300px';
+        }
+
+        function confirmSubmission() {
+            return confirm("Are you sure you want to send this message?");
+        }
+    </script>
+</body>
+</html>

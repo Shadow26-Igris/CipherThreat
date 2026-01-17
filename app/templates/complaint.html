@@ -1,0 +1,22 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File a Complaint</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="complaint-container">
+        <h2>File a Complaint</h2>
+        <form id="complaintForm" action="{{ url_for('complaint_routes.complaint') }}" method="POST">
+            <textarea id="complaint" name="complaint" placeholder="Enter your complaint here" required></textarea>
+            <button type="submit">Submit Complaint</button>
+        </form>
+        
+        <p><a href="{{ url_for('auth_routes.login') }}">Back to Login</a></p>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/complaint.js') }}"></script>
+</body>
+</html>
