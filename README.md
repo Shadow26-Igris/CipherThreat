@@ -81,6 +81,8 @@ CipherThreat/
 git clone https://github.com/Shadow26-Igris/CipherThreat.git
 cd CipherThreat
 
+```
+
 ### Step 2: Install Dependencies
 
 pip install -r requirements.txt
